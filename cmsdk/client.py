@@ -29,6 +29,6 @@ class CmClient(object):
     def __http_get(self, path, params=None):
         endpoint = self.BASE_URI + path
         headers = {"Content-Type": "application/json", "Authorization": self.__oauth.get_auth_header("GET",endpoint, params)}
-        rs = requests.get(endpoint, params=params, headers=headers)
+        rs = requests.get(endpoint, params=params, headers=headers, allow_redirects=False)
 
         return rs.json()
