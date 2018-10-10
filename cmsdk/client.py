@@ -1,4 +1,4 @@
-from auth import OAuthHeader
+from .auth import OAuthHeader
 import requests
 
 
