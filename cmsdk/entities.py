@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Address(object):
+class Address:
     name: str
     extra: str
     street: str
@@ -12,12 +12,12 @@ class Address(object):
 
 
 @dataclass
-class Name(object):
+class Name:
     firstName: str
     lastName: str
 
 @dataclass
-class MoneyDetails(object):
+class MoneyDetails:
     totalBalance: float
     moneyBalance: float
     bonusBalance: float
@@ -25,14 +25,14 @@ class MoneyDetails(object):
     providerRechargeAmount: float
 
 @dataclass
-class BankAccount(object):
+class BankAccount:
     accountOwner: str
     iban: str
     bic: str
     bankName: str
 
 @dataclass
-class Account(object):
+class Account:
     idUser: int
     username: str
     country: str
