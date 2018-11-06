@@ -1,8 +1,9 @@
 from .auth import OAuthHeader
+from .entities import Account
 import requests
 
 
-class CmClient(object):
+class RawCmClient(object):
     BASE_URI = "https://api.cardmarket.com/ws/v2.0/output.json/"
     ACCOUNT = "account"
     ORDERS = "orders"
@@ -32,3 +33,14 @@ class CmClient(object):
         rs = requests.get(endpoint, params=params, headers=headers, allow_redirects=False)
 
         return rs.json()
+
+
+class CmClient:
+
+    def __init__(self, app_token, app_secret, access_token, access_secret):
+        self.__raw_client = RawCmClient(app_token, app_secret, access_token, access_secret)
+
+    def get_account(self):
+        json = self.__raw_client.get_account()
+        return Account.from_json(json['account'])
+
