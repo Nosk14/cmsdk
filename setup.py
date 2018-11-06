@@ -10,5 +10,5 @@ setup(name='cmsdk',
       author_email='nosk14@gmail.com',
       url='https://github.com/Nosk14/cmsdk',
       packages=['cmsdk'],
-      install_requires=["requests>=2.19.1"]
+      install_requires=["requests>=2.20.0"]
       )
